@@ -5,7 +5,7 @@ export default function Method() {
   return (
     <section id="method">
       <GridContainer>
-        <h1 className="text-4xl">Gyeyu Revolte of 1453</h1>
+        <h1 className="text-4xl">Gyeyu Revolt of 1453</h1>
         <GridHighlight>
           <Gyeyu />
         </GridHighlight>

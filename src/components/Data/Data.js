@@ -33,10 +33,12 @@ export default function Data() {
           snap: { innerText: 1 },
           ease: "power1.inOut",
         })
+
         .from("#numTopics", { innerText: 0, snap: { innerText: 1 } })
         .from("#numPeople", { innerText: 0, snap: { innerText: 1 } })
         .from("#numDays", { innerText: 0, snap: { innerText: 1 } })
         .from("#numArticles", { innerText: 0, snap: { innerText: 1 } });
+
     }, dataRef.current);
     return () => ctx.revert();
   }, []);
@@ -106,6 +108,7 @@ export default function Data() {
           <Grid item xs={3} />
           <Grid item xs={6}>
             <div className="flex justify-between flex-wrap my-20">
+
               {[
                 { id: "numMonarchs", value: 26, label: "Monarchs" },
                 { id: "numTopics", value: 214, label: "Topics" },
@@ -113,6 +116,7 @@ export default function Data() {
                 { id: "numDays", value: 183342, label: "Days (1392-1894)" },
                 { id: "numArticles", value: 384279, label: "Articles" },
               ].map(({ id, value, label }) => (
+
                 <p key={label}>
                   <span className="number" id={id}>
                     {value}

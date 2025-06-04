@@ -87,6 +87,7 @@ export default function AgeLine(svg, status) {
     .attr("fill", "#b4c5d9");
 
   function updateChart(selectedStatus) {
+    d3.selectAll(".allpath").remove();
     let density;
     if (selectedStatus === "all") {
       const allColors = ["#b4c5d9", "#c5d9b4", "#d9b5b4"];
@@ -151,8 +152,6 @@ export default function AgeLine(svg, status) {
       }
     } else {
       // Add the average line
-
-      d3.selectAll(".allpath").remove();
       density = kde(
         Lifespan.filter((d) => d.status === selectedStatus).map(
           (d) => +d["lifespan"]

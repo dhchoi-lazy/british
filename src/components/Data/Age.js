@@ -27,9 +27,11 @@ export default function Age() {
     svg.selectAll('*').remove();
     AgeLine(svg, status);
 
+
     return () => {
       svg.selectAll('*').remove();
       d3.selectAll('.statusOption').on('mouseover', null);
+
     };
   }, []);
 

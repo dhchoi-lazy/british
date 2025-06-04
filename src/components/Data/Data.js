@@ -35,7 +35,9 @@ export default function Data() {
           ease: "power1.inOut",
         })
         .from("#number2", { innerText: 0, snap: { innerText: 1 } })
-        .from("#number3", { innerText: 0, snap: { innerText: 1 } });
+        .from("#number3", { innerText: 0, snap: { innerText: 1 } })
+        .from("#number4", { innerText: 0, snap: { innerText: 1 } })
+        .from("#number5", { innerText: 0, snap: { innerText: 1 } });
     }, dataRef.current);
     return () => ctx.revert();
   }, []);
@@ -104,13 +106,13 @@ export default function Data() {
           <Grid item xs={3} />
           <Grid item xs={6}>
             <div className="flex justify-between flex-wrap my-20">
-              {[
-                { id: "number1", value: 26, label: "Monarchs" },
-                { id: "number1", value: 214, label: "Topics" },
-                { id: "number2", value: 60158, label: "People appeared" },
-                { id: "number2", value: 183342, label: "Days (1392-1894)" },
-                { id: "number3", value: 384279, label: "Articles" },
-              ].map(({ id, value, label }) => (
+                {[
+                  { id: "number1", value: 26, label: "Monarchs" },
+                  { id: "number2", value: 214, label: "Topics" },
+                  { id: "number3", value: 60158, label: "People appeared" },
+                  { id: "number4", value: 183342, label: "Days (1392-1894)" },
+                  { id: "number5", value: 384279, label: "Articles" },
+                ].map(({ id, value, label }) => (
                 <p key={label}>
                   <span className="number" id={id}>
                     {value}

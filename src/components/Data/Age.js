@@ -25,7 +25,11 @@ export default function Age() {
   useEffect(() => {
     const svg = d3.select(ref.current);
     AgeLine(svg, status);
-  });
+    return () => {
+      d3.selectAll(".statusOption").on("mouseover", null);
+      svg.selectAll("*").remove();
+    };
+  }, []);
 
   return (
     <section id="age">

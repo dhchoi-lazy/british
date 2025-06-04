@@ -4,6 +4,7 @@ import { GridNormal, GridHighlight, GridContainer } from "../Layout";
 
 import Cartogram from "./Cartogram";
 import Age from "./Age";
+import AverageLifespanBar from "./AverageLifespanBar";
 import Grid from "@mui/material/Grid";
 
 import { useRef, useLayoutEffect } from "react";
@@ -27,15 +28,15 @@ export default function Data() {
         },
       });
       ntl
-        .from("#number1", {
+        .from("#numMonarchs", {
           innerText: 0,
-          snap: {
-            innerText: 1,
-          },
+          snap: { innerText: 1 },
           ease: "power1.inOut",
         })
-        .from("#number2", { innerText: 0, snap: { innerText: 1 } })
-        .from("#number3", { innerText: 0, snap: { innerText: 1 } });
+        .from("#numTopics", { innerText: 0, snap: { innerText: 1 } })
+        .from("#numPeople", { innerText: 0, snap: { innerText: 1 } })
+        .from("#numDays", { innerText: 0, snap: { innerText: 1 } })
+        .from("#numArticles", { innerText: 0, snap: { innerText: 1 } });
     }, dataRef.current);
     return () => ctx.revert();
   }, []);
@@ -69,6 +70,7 @@ export default function Data() {
           <Grid item xs={3} />
           <Grid item xs={6}>
             <Age />
+            <AverageLifespanBar />
           </Grid>
           <Grid item xs={3} />
         </Grid>
@@ -105,11 +107,11 @@ export default function Data() {
           <Grid item xs={6}>
             <div className="flex justify-between flex-wrap my-20">
               {[
-                { id: "number1", value: 26, label: "Monarchs" },
-                { id: "number1", value: 214, label: "Topics" },
-                { id: "number2", value: 60158, label: "People appeared" },
-                { id: "number2", value: 183342, label: "Days (1392-1894)" },
-                { id: "number3", value: 384279, label: "Articles" },
+                { id: "numMonarchs", value: 26, label: "Monarchs" },
+                { id: "numTopics", value: 214, label: "Topics" },
+                { id: "numPeople", value: 60158, label: "People appeared" },
+                { id: "numDays", value: 183342, label: "Days (1392-1894)" },
+                { id: "numArticles", value: 384279, label: "Articles" },
               ].map(({ id, value, label }) => (
                 <p key={label}>
                   <span className="number" id={id}>

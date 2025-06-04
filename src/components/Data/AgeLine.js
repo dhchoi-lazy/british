@@ -105,7 +105,6 @@ export default function AgeLine(svg, status) {
             .append("path")
             .attr("class", "allpath")
             .datum(density)
-            .attr("autoalpha", ".8")
             .attr("opacity", ".8")
             .attr("stroke", "#000")
             .attr("stroke-width", 1)
